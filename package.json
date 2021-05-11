@@ -1,0 +1,33 @@
+{
+  "name": "kakaroto",
+  "version": "1.0.0",
+  "description": "Curso single page application",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "build:dev": "webpack --config webpack.config.dev.js",
+    "start": "webpack serve --config webpack.config.js"
+  },
+  "author": "David Valencia <codingdavid9@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^2.0.0",
+    "dotenv-webpack": "^7.0.2",
+    "mini-css-extract-plugin": "^1.6.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.3.1"
+  }
+}
