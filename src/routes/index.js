@@ -1,3 +1,4 @@
+//Primero importamos los elementos de los que vamos a hacer uso en el flujo de las rutas
 import Header from '../templates/Header';
 import Home from '../pages/home';
 import Character from '../pages/character';
@@ -5,17 +6,20 @@ import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 
-const routes = {
+const routes = { //Objeto estableciendo las rutas de las que vamos a hacer render
   '/': Home,
   '/:id': Character,
   '/contact': 'Contact',
 };
 
-const router = async () => {
-  const header = null || document.getElementById('header');
+//Manejador de las rutas
+const router = async () => {//Cuando se hace una funcion asincrona con async esta devuelve un promise con el valor resuelto por async. Await pausa la funcion async y espera hasta esta ser resuelta; una vez resuelto el await reanuda el async.
+
+//Establecemos los templates que queremos hacia un elemento del DOM
+  const header = null || document.getElementById('header'); //Creamos una constante "header" y la igualamos al section "header" del html
   const content = null || document.getElementById('content');
 
-  header.innerHTML = await Header();
+  header.innerHTML = await Header();//Igualamos el elemento "header" del html a "Header()" el template para empujar este mismo hacia la posicion en la que esta el id "header" del html
   let hash = getHash();
   let route = await resolveRoutes(hash);
   let render = routes[route] ? routes[route] : Error404;

@@ -59,6 +59,6 @@ module.exports = { //Modulos para exportar: Es donde instanciaremos toda configu
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
-    port: 3006,
+    port: 3007,
   },
 }
