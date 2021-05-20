@@ -20,9 +20,9 @@ const router = async () => {//Cuando se hace una funcion asincrona con async est
   const content = null || document.getElementById('content');
 
   header.innerHTML = await Header();//Igualamos el elemento "header" del html a "Header()" el template para empujar este mismo hacia la posicion en la que esta el id "header" del html
-  let hash = getHash();
-  let route = await resolveRoutes(hash);
-  let render = routes[route] ? routes[route] : Error404;
+  let hash = getHash(); //Guardamos el hash en una variable "hash"
+  let route = await resolveRoutes(hash); //Manejamos la ruta
+  let render = routes[route] ? routes[route] : Error404;//Render contiene el valor de las rutas, las que tenemos declaradas en routes
   content.innerHTML = await render();
 };
 
